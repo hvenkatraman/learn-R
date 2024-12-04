@@ -9,6 +9,12 @@ function error_exit {
 # Prompt for project name
 read -p "Enter project name: " projectName
 
+# Ensure Python distutils is installed
+if ! python3 -m pip show setuptools &> /dev/null; then
+    echo "Installing Python distutils..."
+    python3 -m pip install setuptools || error_exit "Failed to install Python distutils."
+fi
+
 # Create project folder and navigate into it
 mkdir "$projectName" || error_exit "Failed to create project directory."
 cd "$projectName" || error_exit "Could not navigate to project directory."
@@ -16,8 +22,8 @@ cd "$projectName" || error_exit "Could not navigate to project directory."
 # Initialize npm project
 npm init -y || error_exit "Failed to initialize npm project."
 
-# Install necessary packages
-npm install express cookie-parser body-parser nodemon mongoose mongodb pg mysql sqlite3 || error_exit "Failed to install npm packages."
+# Install necessary packages without sqlite3
+npm install express cookie-parser body-parser nodemon mongoose mongodb pg mysql || error_exit "Failed to install npm packages."
 
 # Create a basic index.js template
 cat <<EOL > index.js
@@ -88,18 +94,6 @@ mysqlConnection.connect(err => {
     console.error('Could not connect to MySQL', err);
   } else {
     console.log('Connected to MySQL');
-  }
-});
-*/
-
-// SQLite3
-/*
-const sqlite3 = require('sqlite3').verbose();
-const sqliteDB = new sqlite3.Database(':memory:', err => {
-  if (err) {
-    console.error('Could not connect to SQLite3', err);
-  } else {
-    console.log('Connected to SQLite3');
   }
 });
 */
