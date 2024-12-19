@@ -1,5 +1,5 @@
 {
-  "name": "test1",
+  "name": "test",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,12 +12,9 @@
   "dependencies": {
     "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
-    "mongoose": "^8.8.4",
-    "morgan": "^1.10.0",
-    "nodemon": "^3.1.7"
+    "mongoose": "^8.9.0",
+    "nodemon": "^3.1.9"
   }
 }
