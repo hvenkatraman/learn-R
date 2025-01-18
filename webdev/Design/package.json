@@ -4,8 +4,8 @@
   "description": "Venkat project design",
   "main": "test.js",
   "scripts": {
-    "start": "live-server a.html",
-    "dev": "nodemon test.js"
+    "start": "npx http-server "
+    
 
   },
   "author": "venkat",
