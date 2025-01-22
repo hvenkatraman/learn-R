@@ -5,7 +5,7 @@ function FuncCompState(){
 
 const  [data,setData] = React.useState("Welcome");
     
-    setInterval(()=>{setData("Have great future,get ready to enjoy!")},50000);    
+    setInterval(()=>{setData("Have great future,get ready to enjoy!")},20000);    
     return(
         <div>
             <p>A S in functional Component</p>

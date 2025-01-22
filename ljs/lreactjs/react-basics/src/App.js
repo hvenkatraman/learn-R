@@ -11,6 +11,11 @@ import ClassCompStateUpdate from "./components/ClassCompStateUpdate";
 import ClassCompWillUnmount from "./components/ClassCompWillUnmount";
 import FuncCompState from "./components/FuncCompState";
 import FuncCompEvent from "./components/FuncCompEvent";
+import FuncCompEventParameter from "./components/FuncCompEventParameter";
+import FuncCompCndtnlRndrng from "./components/FuncCompCndtnlRndrng";
+import List from "./components/List";
+import ListMap from "./components/ListMap";
+import Counter from "./components/Counter";
 function App() {
   return (
     <div>
@@ -32,6 +37,11 @@ function App() {
       <ClassCompWillUnmount/>
       <FuncCompState/>
       <FuncCompEvent/>
+      <FuncCompEventParameter/>
+      <FuncCompCndtnlRndrng/>
+      <List/>
+      <ListMap/>
+      <Counter/>
 
       
     </div>

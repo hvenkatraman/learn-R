@@ -12,7 +12,7 @@ const okh = ()=>{
 
     return(
         <div>
-            <p>A Event in functional Component</p>
+            <p>An Event in functional Component</p>
             <p>Use state hook/function for state in functional component</p>
             <div><button className="btn" type="button" onClick={okh}>clickMe</button></div>
             <p>{data}</p>
