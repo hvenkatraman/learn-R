@@ -16,6 +16,7 @@ import FuncCompCndtnlRndrng from "./components/FuncCompCndtnlRndrng";
 import List from "./components/List";
 import ListMap from "./components/ListMap";
 import Counter from "./components/Counter";
+import Form from "./components/Form";
 function App() {
   return (
     <div>
@@ -42,6 +43,7 @@ function App() {
       <List/>
       <ListMap/>
       <Counter/>
+      <Form/>
 
       
     </div>
