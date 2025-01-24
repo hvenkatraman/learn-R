@@ -10,7 +10,7 @@ const [country,setCountry] = useState("UK");
 const [agreement,setAgreement] = useState(false);
 const [gender,setGender] = useState("male");
 
-    const changeHandler = (e)=>{
+const changeHandler = (e)=>{
 
         if (e.target.name==="fname") {
 
@@ -36,6 +36,17 @@ const [gender,setGender] = useState("male");
         
                 setGender(e.target.value);}
 };
+const submitHandler = (e)=>{
+
+    e.preventDefault();
+
+    console.log(`Fullname : ${fname} ${mname} ${lname}`);
+    console.log(`Description : ${desc}`);
+    console.log(`Country selected : ${country}`);
+    console.log(`Licence Agreement : ${agreement}`);
+    console.log(`Gender : ${gender}`);
+        
+}
 useEffect(()=>{
              
     console.log(`Fullname:${fname}${mname}${lname},Description:${desc}&${country}&${agreement}& gender:${gender}`);    
@@ -44,6 +55,7 @@ useEffect(()=>{
 
 
     return(
+    <form onSubmit={submitHandler}>
 
         <div>
             <input type="text" name="fname" value={fname} onChange={changeHandler}placeholder="Enter Firstname"/>
@@ -65,10 +77,10 @@ useEffect(()=>{
              <input type="radio" name="gender" value="male" onChange={changeHandler} />
              <input type="radio" name="gender" value="female" onChange={changeHandler} />
             <input type="radio" name="gender" value="others" onChange={changeHandler} />
-            {/* <input type="text" name="username" value={text} onChange={changeHandler} />
-            <input type="text" name="username" value={text} onChange={changeHandler} /> */}
+            <br></br>
+             <input type="submit"value="Save"/>
         </div>
-        
+    </form>
 
     );
 
