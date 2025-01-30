@@ -17,14 +17,26 @@ import List from "./components/List";
 import ListMap from "./components/ListMap";
 import Counter from "./components/Counter";
 import Form from "./components/Form";
+import ClickCounter from "./components/ClickCounter";
+import ClickCounterHOC from "./components/ClickCounterHOC";
+import HoverCounter from "./components/HoverCounter";
+import HoverCounterHOC from "./components/HoverCounterHOC";
+import RenderProps from "./components/RenderProps";
+import CounterLogic from "./components/CounterLogic";
+import ClickCounterWithRpCl from "./components/ClickCounterWithRpCl";
+import HoverCounterWithRpCl from "./components/HoverCounterWithRpCl";
+
+
 function App() {
   return (
     <div>
       <SubComponent/>
+      C
       <ClassBasedComponent/>
       <ReactProps name="H Venkat Ramana" age="35" height="5ft 11inches"weight ="78kgs"/>
       <ReactChildrens>
         <span>H Mihit</span>
+
         <span>7 Years</span>
         <span>4ft 8inches</span>
         <span>25Kgs</span>
@@ -44,10 +56,24 @@ function App() {
       <ListMap/>
       <Counter/>
       <Form/>
-
+      <ClickCounter/>
+      <ClickCounterHOC/>
+      <HoverCounter/> 
+      <HoverCounterHOC/>
+      <RenderProps 
+      greetString="Welcome Everyone using string props" 
+      greetFunction={()=>"Welcome Everyone using function props"}
+      greetFunction1={()=>{return"Welcome Everyone using function return props"}}
+      greetFunction2={(isNew)=>isNew ? "Welcome Everyone using function parameterised props":"welcome member"}/>
+      
+      <CounterLogic render={(counter,incrementCounter)=>(<ClickCounterWithRpCl counter={counter} incrementCounter={incrementCounter}/>)}/>
+      <CounterLogic 
+        render={(counter,incrementCounter)=><HoverCounterWithRpCl 
+        counter={counter} 
+        incrementCounter={incrementCounter}/>}/>
       
     </div>
   );
 }
 
-export default App;
+export default App; 
